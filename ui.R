@@ -2,8 +2,9 @@
 ui <- page_navbar(
   
   title = navbar_brand,
-  id = "test",
+  id = "main",
   lang = "en",
+  header = includeCSS("www/styles.css"),
   theme = theme,
   
   bg = navbar_col,
@@ -16,7 +17,14 @@ ui <- page_navbar(
           p("some text")
       ),
       card(
-          "file drop"
+          "file drop",
+          fileInputArea("upload_pdf",
+                        label = 'Drop files here',
+                        buttonLabel = "Must be PDF",
+                        multiple = FALSE,
+                        accept = ".pdf",
+                        width = "100%"
+          )
       )
     )
 
