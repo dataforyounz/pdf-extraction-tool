@@ -7,13 +7,16 @@
   border-radius: 20px;
   background-color: transparent;
 }
+
 .btn-area:hover {
-  color: #6c757d;
-  /*border-color: #495057;*/
+  color: #E86A33;
+  border-color: #6c757d;;
 }
+
 .progress {
   height: 32px;
 }
+
 .progress .progress-bar {
   font-size: 16px;
   line-height: 28px;

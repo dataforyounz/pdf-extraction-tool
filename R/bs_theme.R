@@ -34,7 +34,6 @@ theme <- bs_theme(
                  ) |> 
                  bs_add_rules( 
                    list(
-                        "h1, h2, h3 { color: $primary; }",
-                        "p { color: $secondary; }"
+                        "h1, h2, h3, h4, h5 { color: $primary; }"
                         )
                  )

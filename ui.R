@@ -10,23 +10,30 @@ ui <- page_navbar(
   bg = navbar_col,
   
   nav_panel(
-    title = "Get Started",
+    title = "File Import",
     layout_column_wrap(
-      card(
-          h2("PDF Data Extraction Tool"),
+      width = NULL,
+      height = 400,
+      fill = FALSE,
+      style = css(grid_template_columns = "2fr 1fr"),
+      card( 
+          card_header("Getting Started", style = "background-color: #373a3c; color: #f8f9fa"),
+          card_body(
+          h5("Welcome to the PDF Data Extraction Tool!", style = paste0("color: ", primary_col, ";") ),
           p("some text")
+          )
       ),
-      card(
-          "file drop",
+      card( 
+          card_header("Upload File", style = "background-color: #373a3c; color: #f8f9fa"),
           fileInputArea("upload_pdf",
-                        label = 'Drop files here',
-                        buttonLabel = "Must be PDF",
+                        label = 'Drag and drop your PDF files here',
+                        buttonLabel = "Or just click to search",
                         multiple = FALSE,
                         accept = ".pdf",
                         width = "100%"
+         )
           )
       )
-    )
 
   ),
   
