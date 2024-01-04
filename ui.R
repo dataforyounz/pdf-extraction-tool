@@ -13,7 +13,7 @@ ui <- page_navbar(
     title = "File Import",
     layout_column_wrap(
       width = NULL,
-      height = 400,
+      height = 450,
       fill = FALSE,
       style = css(grid_template_columns = "2fr 1fr"),
       card( 
@@ -39,8 +39,19 @@ ui <- page_navbar(
   
   nav_panel(
     title = "Extract Table",
-    h2("Extract!"),
-    p("some more text")
+    layout_column_wrap(
+      width = 500,
+      height = 600,
+      fixed_width = TRUE,
+      card(
+        card_header("PDF Viewer"),
+        uiOutput("pdf_viewer")
+      ),
+      card(
+        rHandsontableOutput("table_output") 
+      )
+    )
+
   ),
   
 )
