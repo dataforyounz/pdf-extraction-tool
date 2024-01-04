@@ -5,6 +5,7 @@ library( shinyWidgets )
 library( bslib )
 library( htmltools )
 library( rhandsontable )
+library( tabulizer )
 
 icon_file <- tempfile(fileext = ".svg")
 writeLines('

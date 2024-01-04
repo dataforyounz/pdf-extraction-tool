@@ -28,7 +28,7 @@ server <- function( input, output, session ){
     file.copy( input$upload_pdf$datapath, "www", overwrite = TRUE )
     
     output$pdf_viewer <- renderUI({
-      tags$iframe(style = "width: 100%; height: 600px;", src = "/0.pdf" ) 
+      tags$iframe(style = "width: 100%; height: 600px;", src = "/0.pdf#view=fitH" ) 
     })
     
     reactive_list$valid_upload <- TRUE
@@ -39,6 +39,9 @@ server <- function( input, output, session ){
     }
   })
   
-  
+  # Remove copied file
+  session$onSessionEnded( function() {
+    file.remove( file.path("www", dir("www", pattern = ".pdf")) )
+  })
   
 }
